@@ -1,0 +1,23 @@
+{
+  "name": "blog-videojuegos",
+  "version": "1.0.0",
+  "description": "Proyecto de un blog de videojuegos con PHP y MySQL",
+  "main": "index.js",
+  "scripts": {
+    "dev": "postcss ./assets/css/input.css -o ./dist/output.css -w"
+  },
+  "keywords": [
+    "php",
+    "sql"
+  ],
+  "author": "Mateo Álvarez <maalvarezmu@unal.edu.co>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "postcss-cli": "^10.1.0"
+  }
+}
