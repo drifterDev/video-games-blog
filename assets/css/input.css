@@ -62,4 +62,16 @@
   .entrada-formulario input {
     @apply px-2 py-1 md:w-full md:block mb-2 md:mb-5 border-2 border-gray-600 rounded w-full;
   }
+
+  .alerta {
+    @apply w-full rounded px-2 py-1 my-2;
+  }
+
+  .alerta-exito {
+    @apply bg-green-300 text-green-600;
+  }
+
+  .alerta-error {
+    @apply bg-red-300 text-red-600;
+  }
 }

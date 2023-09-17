@@ -39,3 +39,5 @@ CREATE TABLE
         CONSTRAINT fk_entrada_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id),
         CONSTRAINT fk_entrada_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id) ON DELETE NO ACTION
     ) ENGINE = InnoDb;
+
+SET NAMES 'utf8mb4';
