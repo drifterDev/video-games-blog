@@ -1,5 +1,5 @@
 {
-  "name": "video-game-blog",
+  "name": "blog-videojuegos",
   "version": "1.0.0",
   "description": "Proyecto de un blog de videojuegos con PHP y MySQL",
   "main": "index.js",
