@@ -20,38 +20,46 @@
 
     <!-- Menu -->
     <nav id="nav" class="w-full px-5 mt-5">
-      <ul class="flex flex-wrap border-t-2 pt-3 md:pt-5">
-        <li class="text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">
+      <ul class="barra-navegacion">
+        <li>
           <a href="index.php">Inicio</a>
         </li>
-        <li class="text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">
+        <li>
           <a href="index.php">Categoria 1</a>
         </li>
-        <li class="text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">
+        <li>
           <a href="index.php">Categoria 2</a>
         </li>
-        <li class="text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">
+        <li>
           <a href="index.php">Categoria 3</a>
         </li>
-        <li class="text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">
+        <li>
           <a href="index.php">Categoria 4</a>
         </li>
-        <li class="text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">
+        <li>
           <a href="index.php">Sobre mí</a>
         </li>
-        <li class="text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">
+        <li>
           <a href="index.php">Contacto</a>
         </li>
       </ul>
     </nav>
   </header>
 
-  <div id="container" class="flex">
+  <div id="container" class="flex flex-wrap">
     <!-- Caja principal -->
-    <main id="main" class="w-2/3 p-4">
-      <h1 class="text-3xl font-bold mb-4">Ultimas entradas</h1>
-      <article class="entrada mb-6">
-        <h2 class="text-2xl font-semibold">Título de la entrada</h2>
+    <main id="main" class="w-full m-5 lg:mt-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
+      <h1 class="text-2xl md:text-3xl font-bold mb-4">Ultimas entradas</h1>
+      <article class="entrada">
+        <h2>Título de la entrada</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vel rem hic illo fuga nulla? Sunt vitae ad consequatur neque.</p>
+      </article>
+      <article class="entrada">
+        <h2>Título de la entrada</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vel rem hic illo fuga nulla? Sunt vitae ad consequatur neque.</p>
+      </article>
+      <article class="entrada">
+        <h2>Título de la entrada</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vel rem hic illo fuga nulla? Sunt vitae ad consequatur neque.</p>
       </article>
       <article class="entrada">
@@ -66,39 +74,53 @@
         <h2>Título de la entrada</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vel rem hic illo fuga nulla? Sunt vitae ad consequatur neque.</p>
       </article>
+      <div class="w-full flex justify-center">
+        <a href="index.php" class="boton text-lg font-bold">Ver todas las entradas</a>
+
+      </div>
     </main>
     <!-- Barra lateral -->
-    <aside id="sidebar" class="w-1/3 bg-gray-100 p-4">
+    <aside id="sidebar" class="w-full lg:w-[28%] md:w-[32%]">
       <!-- login -->
-      <div id="login" class="mb-6">
-        <h3 class="text-xl font-bold mb-2">Identificate</h3>
-        <form action="login.php" method="POST">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-
-          <label for="password">Contraseña</label>
-          <input type="password" name="password" id="password" />
-
-          <input type="submit" value="Entrar">
+      <div id="login" class="bg-white p-5 mx-5 mb-5 md:mt-5 lg:mt-8 flex flex-col">
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-5">Identificate</h3>
+        <form action="login.php" class="formulario flex flex-col" method="POST">
+          <div class="entrada-formulario">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="entrada-formulario">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <input type="submit" class="boton" value="Entrar">
         </form>
       </div>
       <!-- register -->
-      <div id="register">
-        <h3 class="text-xl font-bold mb-2">Registrate</h3>
-        <form action="register.php" method="POST">
-          <label for="name">Nombre</label>
-          <input type="text" name="name" id="name">
+      <div id="register" class="bg-white p-5 mx-5 mb-5">
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-5">Registrate</h3>
+        <form action="register.php" class="formulario flex flex-col" method="POST">
+          <div class="entrada-formulario">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name">
 
-          <label for="apellidos">Apellidos</label>
-          <input type="text" name="apellidos" id="apellidos">
+          </div>
+          <div class="entrada-formulario">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos">
 
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
+          </div>
+          <div class="entrada-formulario">
+            <label for="email2">Email</label>
+            <input type="email2" name="email2" id="email2" />
 
-          <label for="password">Contraseña</label>
-          <input type="password" name="password" id="password" />
+          </div>
+          <div class="entrada-formulario">
+            <label for="password2">Contraseña</label>
+            <input type="password2" name="password2" id="password2" />
 
-          <input type="submit" value="Registrarse">
+          </div>
+          <input type="submit" class="boton" value="Registrarse">
         </form>
       </div>
     </aside>

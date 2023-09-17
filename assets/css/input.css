@@ -1,10 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  html{
-    font-family: 'Roboto', sans-serif;
+@layer base {
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #2563eb; /* Color del pulgar de la barra (gris oscuro) */
+  }
+
+  /* Estilos para personalizar la barra de desplazamiento en navegadores no basados en WebKit (Firefox) */
+  * {
+    scrollbar-width: thin; /* Ancho de la barra en Firefox */
+    scrollbar-color: #2563eb #134ecf; /* Color del pulgar y fondo de la barra en Firefox (gris oscuro) */
+  }
+}
+
+@layer components {
+  .entrada h2 {
+    @apply text-xl md:text-2xl font-bold mb-2 md:mb-3 text-blue-500;
+  }
+
+  .entrada p {
+    @apply text-sm md:text-base mb-5 md:mb-8;
+  }
+
+  .barra-navegacion {
+    @apply flex flex-wrap border-t-2 pt-3 md:pt-5;
+  }
+
+  .barra-navegacion li {
+    @apply text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out;
+  }
+  /* 
+  .boton {
+    @apply bg-blue-500 px-5 py-2 rounded text-white;
+  } */
+
+  .boton {
+    @apply bg-blue-500 mt-2 px-5 py-2 rounded text-white transition duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-600 cursor-pointer;
+  }
+
+  .formulario {
+  }
+
+  .entrada-formulario {
+    @apply flex w-full justify-start md:block;
+  }
+
+  .entrada-formulario label {
+    @apply md:w-full md:block mb-1 md:mb-2 mr-5;
+  }
+
+  .entrada-formulario input {
+    @apply px-2 py-1 md:w-full md:block mb-2 md:mb-5 border-2 border-gray-600 rounded w-full;
   }
 }
