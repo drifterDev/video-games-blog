@@ -39,28 +39,40 @@
   .barra-navegacion li {
     @apply text-sm md:text-base p-2 md:p-3 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out;
   }
-  /* 
-  .boton {
-    @apply bg-blue-500 px-5 py-2 rounded text-white;
-  } */
 
   .boton {
-    @apply bg-blue-500 mt-2 px-5 py-2 rounded text-white transition duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-600 cursor-pointer;
+    @apply text-center mt-2 px-5 py-2 rounded transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer;
+  }
+
+  .boton-verde {
+    @apply bg-green-500 text-white hover:bg-green-600;
+  }
+
+  .boton-azul {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+  }
+
+  .boton-amarillo {
+    @apply bg-yellow-500 text-white hover:bg-yellow-600;
+  }
+
+  .boton-rojo {
+    @apply bg-red-500 text-white hover:bg-red-600;
   }
 
   .formulario {
   }
 
   .entrada-formulario {
-    @apply flex w-full justify-start md:block;
+    @apply flex w-full justify-start md:block lg:flex lg:justify-between;
   }
 
   .entrada-formulario label {
-    @apply md:w-full md:block mb-1 md:mb-2 mr-5;
+    @apply md:w-full md:block mb-1 md:mb-2 mr-5 lg:inline lg:w-auto;
   }
 
   .entrada-formulario input {
-    @apply px-2 py-1 md:w-full md:block mb-2 md:mb-5 border-2 border-gray-600 rounded w-full;
+    @apply px-2 py-1 md:w-full md:block mb-2 md:mb-5 border-2 border-gray-600 rounded w-full lg:inline  lg:mb-3;
   }
 
   .alerta {

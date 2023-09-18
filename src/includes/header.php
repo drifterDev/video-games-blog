@@ -1,3 +1,11 @@
+<!-- 
+Autor: Mateo Álvarez Murillo
+Fecha de creación: 2023
+
+Este código se proporciona bajo la Licencia MIT.
+Para más información, consulta el archivo LICENSE en la raíz del repositorio. 
+-->
+
 <!-- Cabecera -->
 <header id="header" class="bg-blue-500 text-white pt-5 pb-3 md:py-5">
   <!-- Logo -->

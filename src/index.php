@@ -1,3 +1,11 @@
+<!-- 
+Autor: Mateo Álvarez Murillo
+Fecha de creación: 2023
+
+Este código se proporciona bajo la Licencia MIT.
+Para más información, consulta el archivo LICENSE en la raíz del repositorio. 
+-->
+
 <?php require_once("includes/Connection.php") ?>
 <?php if (!isset($_SESSION)) session_start() ?>
 
@@ -43,7 +51,7 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vel rem hic illo fuga nulla? Sunt vitae ad consequatur neque.</p>
       </article>
       <div class="w-full flex justify-center">
-        <a href="index.php" class="boton text-lg font-bold">Ver todas las entradas</a>
+        <a href="index.php" class="boton text-lg font-bold boton-verde">Ver todas las entradas</a>
 
       </div>
     </main>

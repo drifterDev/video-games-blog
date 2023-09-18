@@ -8,29 +8,31 @@
 
 require_once("includes/Connection.php");
 if (!isset($_SESSION)) session_start();
-if (isset($_POST)) {
-  $email = trim($_POST["email"]) ?? false;
-  $password = $_POST["password"] ?? false;
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+  $password = $_POST["password"];
 
-  // Comprobar contraseña
-  $sql = "SELECT * FROM usuarios where email= '$email'";
-  $login = mysqli_query($db, $sql);
+  $sql = "SELECT * FROM usuarios WHERE email = ?";
+  $stmt = mysqli_prepare($db, $sql);
 
-  if ($login && mysqli_num_rows($login) == 1) {
-    $data = mysqli_fetch_assoc($login);
-    $verify = password_verify($password, $data["password"]);
-    if ($verify) {
-      echo "Funciono";
-      $_SESSION["user"] = $data;
-      if (isset($_SESSION["error_login"])) {
-        session_unset();
+  if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if ($result && $data = mysqli_fetch_assoc($result)) {
+      if (password_verify($password, $data["password"])) {
+        $_SESSION["user"] = $data;
+      } else {
+        $_SESSION["error_login"] = "Correo electrónico o contraseña incorrectos.";
       }
     } else {
-      $_SESSION["error_login"] = "Error al iniciar sesión";
+      $_SESSION["error_login"] = "Error al iniciar sesión.";
     }
+    mysqli_stmt_close($stmt);
   } else {
-    // Error
-    $_SESSION["error_login"] = "Error al iniciar sesión";
+    $_SESSION["error_login"] = "Error al iniciar sesión.";
   }
 }
+
 header("Location: index.php");
