@@ -25,11 +25,15 @@
 
 @layer components {
   .entrada h2 {
-    @apply text-xl md:text-2xl font-bold mb-2 md:mb-3 text-blue-500;
+    @apply text-xl md:text-2xl font-bold mb-1 md:mb-2 text-blue-500;
   }
 
   .entrada p {
     @apply text-sm md:text-base mb-5 md:mb-8;
+  }
+
+  .entrada span {
+    @apply text-gray-500 text-sm;
   }
 
   .barra-navegacion {

@@ -21,3 +21,25 @@ function delete_errors()
   $delete = session_unset();
   return $delete;
 }
+
+function getCategories($db)
+{
+  $sql = "SELECT * FROM categorias ORDER BY id ASC";
+  $categories = mysqli_query($db, $sql);
+  if ($categories && mysqli_num_rows($categories) > 0) {
+    return $categories;
+  }
+  return array();
+}
+
+function getPosts($db)
+{
+  $sql = "SELECT e.*, c.nombre AS 'categoria' FROM entradas e" .
+    " INNER JOIN categorias c ON e.categoria_id=c.id" .
+    " ORDER BY e.id DESC LIMIT 4";
+  $posts = mysqli_query($db, $sql);
+  if ($posts && mysqli_num_rows($posts) > 0) {
+    return $posts;
+  }
+  return array();
+}

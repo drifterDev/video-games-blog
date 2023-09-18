@@ -6,6 +6,7 @@ Este código se proporciona bajo la Licencia MIT.
 Para más información, consulta el archivo LICENSE en la raíz del repositorio. 
 -->
 
+<?php require_once("includes/redirect.php") ?>
 <?php require_once("includes/Connection.php") ?>
 <?php require_once("includes/helpers.php") ?>
 <?php if (!isset($_SESSION)) session_start() ?>
@@ -26,25 +27,18 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <div id="container" class="flex flex-wrap">
     <!-- Caja principal -->
     <main id="main" class="w-full m-5 lg:mt-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
-      <h1 class="text-2xl md:text-3xl font-bold mb-4">Ultimas entradas</h1>
-      <?php
-      $posts = getPosts($db);
-      if (mysqli_num_rows($posts) > 0) :
-        while ($post = mysqli_fetch_assoc($posts)) :
-      ?>
-          <article class="entrada">
-            <h2><?= $post["titulo"] ?></h2>
-            <span><?= $post["categoria"] . " | " . $post["fecha"] ?></span>
-            <p><?= substr($post["descripcion"], 0, 200) ?>...</p>
-          </article>
-      <?php
-        endwhile;
-      endif;
-      ?>
-      <div class="w-full flex justify-center">
-        <a href="index.php" class="boton text-lg font-bold boton-verde">Ver todas las entradas</a>
+      <h1 class="text-2xl md:text-3xl font-bold mb-4">Crea nuevas categorías</h1>
+      <p class="mb-5">Añade nuevas categorías para el blog de videojuegos y para que los otros usuarios puedan crear sus entradas en base a las nuevas categorías creadas.</p>
+      <form action="save-category.php" method="POST">
+        <div class="flex w-full flex-col">
+          <label for="name" class="w-full block mb-1 md:mb-2">Nombre</label>
+          <input type="text" id="name" name="name" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded">
+        </div>
+        <div class="w-full flex">
+          <input type="submit" value="Guardar" class="boton boton-azul">
+        </div>
+      </form>
 
-      </div>
     </main>
     <?php require_once("includes/rigth-bar.php") ?>
   </div>
