@@ -17,9 +17,12 @@ function show_errors($errors, $field)
 
 function delete_errors()
 {
+  unset($_SESSION["errors"]);
+  unset($_SESSION["general"]);
+  unset($_SESSION["error_login"]);
   // $_SESSION["errors"] = null;
-  $delete = session_unset();
-  return $delete;
+  // $delete = session_unset();
+  // return $delete;
 }
 
 function getCategories($db)
@@ -38,7 +41,7 @@ function getPosts($db)
     " INNER JOIN categorias c ON e.categoria_id=c.id" .
     " ORDER BY e.id DESC LIMIT 4";
   $posts = mysqli_query($db, $sql);
-  if ($posts && mysqli_num_rows($posts) > 0) {
+  if ($posts && mysqli_num_rows($posts) >= 0) {
     return $posts;
   }
   return array();

@@ -17,7 +17,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog de videojuegos</title>
-  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" type="text/css" href="../dist/output.css">
 </head>
 
 <body class="bg-[url('../assets/img/cubes.png')]">
