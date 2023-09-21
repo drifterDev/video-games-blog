@@ -18,7 +18,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Información del usuario</title>
-  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="dist/output.css">
 </head>
 
 <body class="bg-[url('../assets/img/cubes.png')]">
@@ -29,7 +29,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
     <main id="main" class="w-full m-5 lg:mt-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
       <h1 class="text-2xl md:text-3xl font-bold mb-4">Actualiza tu información personal</h1>
       <p class="mb-5">En esta sección de la página web podrás actualizar tu información personal en cualquier momento.</p>
-      <form action="save-data.php" method="POST">
+      <form action="save/data.php" method="POST">
         <div class="flex w-full flex-col">
           <div class="w-64">
             <?php if (isset($_SESSION["Dcomplete"])) : ?>

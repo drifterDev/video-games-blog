@@ -8,7 +8,7 @@
 
 if (!isset($_SESSION)) session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  require_once("includes/Connection.php");
+  require_once("../includes/Connection.php");
   $name = mysqli_real_escape_string($db, $_POST["name"]) ?? false;
   $surnames = mysqli_real_escape_string($db, $_POST["surnames"]) ?? false;
   $email = mysqli_real_escape_string($db, trim($_POST["email"])) ?? false;
@@ -44,4 +44,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
   $_SESSION["errors"] = $errors;
 }
-header("Location: data.php");
+header("Location: ../data.php");
+exit();

@@ -27,7 +27,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
         <a href="data.php" class="w-48 boton boton-amarillo">Mis datos</a>
       </div>
       <div class="mx-3 md:mx-0 md:w-full flex md:justify-center">
-        <a href="logout.php" class="w-48 boton boton-rojo">Cerrar sesión</a>
+        <a href="login/logout.php" class="w-48 boton boton-rojo">Cerrar sesión</a>
       </div>
     </div>
   <?php endif; ?>
@@ -42,7 +42,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
     <?php else : ?>
       <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-5">Identificate</h3>
     <?php endif; ?>
-    <form action="login.php" class="formulario flex flex-col" method="POST">
+    <form action="login/login.php" class="formulario flex flex-col" method="POST">
       <div class="entrada-formulario">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" />
@@ -67,7 +67,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
     <?php elseif (isset($_SESSION["errors"])) : ?>
       <?= show_errors($_SESSION["errors"], "general") ?>
     <?php endif; ?>
-    <form action="sign-up.php" class="formulario flex flex-col" method="POST">
+    <form action="login/sign-up.php" class="formulario flex flex-col" method="POST">
       <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "name") : "" ?>
       <div class="entrada-formulario">
         <label for="name">Nombre</label>

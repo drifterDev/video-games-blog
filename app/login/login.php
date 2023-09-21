@@ -6,7 +6,7 @@
 // Este código se proporciona bajo la Licencia MIT.
 // Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 
-require_once("includes/Connection.php");
+require_once("../includes/Connection.php");
 if (!isset($_SESSION)) session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
@@ -35,4 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 }
 
-header("Location: index.php");
+header("Location: ../index.php");
+exit();

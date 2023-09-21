@@ -6,7 +6,7 @@
 // Este código se proporciona bajo la Licencia MIT.
 // Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 
-require_once("includes/Connection.php");
+require_once("../includes/Connection.php");
 if (!isset($_SESSION)) session_start();
 $errors = array();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -30,4 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 }
 $_SESSION["errors"] = $errors;
-header("Location: categories.php");
+header("Location: ../categories.php");
+exit();
+

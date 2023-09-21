@@ -92,16 +92,3 @@ VALUES (
         'Experimenta la emoción de los combates intensos en el campo de batalla mientras te adentras en un juego de acción de alto octanaje. En esta entrada, te sumergirás en experiencias de combate emocionantes, enfrentándote a enemigos formidables y desatando poderosas habilidades. Prepárate para la acción sin límites y demuestra tu valentía en el campo de batalla.',
         '2023-09-12'
     );
-
-SELECT e.*, c.*
-FROM entradas e
-    INNER JOIN categorias c ON e.categoria_id = c.id
-ORDER BY e.id DESC
-LIMIT 5;
-
-UPDATE usuarios
-SET
-    nombre = "Mateo",
-    apellidos = "Álvarez Murillo",
-    email = "mateo@correo.falso"
-WHERE id = 1;

@@ -8,7 +8,7 @@
 
 if (!isset($_SESSION)) session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  require_once("includes/Connection.php");
+  require_once("../includes/Connection.php");
   $title = mysqli_real_escape_string($db, $_POST["title"]) ?? '';
   $description = mysqli_real_escape_string($db, $_POST["description"]) ?? '';
   $category = (int)$_POST["category"] ?? '';
@@ -43,4 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
   $_SESSION["errors"] = $errors;
 }
-header("Location: posts.php");
+header("Location: ../posts.php");
+exit();

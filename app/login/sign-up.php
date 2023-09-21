@@ -7,7 +7,7 @@
 // Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 
 if (isset($_POST)) {
-  require_once("includes/Connection.php");
+  require_once("../includes/Connection.php");
   if (!isset($_SESSION)) session_start();
 
   $name = mysqli_real_escape_string($db, $_POST["name"]) ?? false;
@@ -64,4 +64,5 @@ if (isset($_POST)) {
     $_SESSION["errors"] = $errors;
   }
 }
-header("Location: index.php");
+header("Location: ../index.php");
+exit();
