@@ -36,6 +36,18 @@
     @apply text-gray-500 text-sm;
   }
 
+  .post p {
+    @apply text-sm md:text-base mb-5 md:mb-8 mt-5;
+  }
+
+  .post span {
+    @apply text-gray-500 text-sm;
+  }
+
+  .post a {
+    @apply bg-blue-300 text-blue-600 px-2 py-1 rounded cursor-pointer mr-5;
+  }
+
   .barra-navegacion {
     @apply flex flex-wrap border-t-2 pt-3 md:pt-5;
   }

@@ -66,3 +66,20 @@ function getCategory($db, $id)
     return null;
   }
 }
+
+function getPost($db, $id)
+{
+  if (!isset($id)) return null;
+  $sql = "SELECT e.*, c.nombre AS 'categoria' FROM entradas e " .
+    "INNER JOIN categorias c ON e.categoria_id=c.id WHERE e.id=$id";
+  try {
+    $post = mysqli_query($db, $sql);
+    if ($post && mysqli_num_rows($post) > 0) {
+      return $post->fetch_assoc();
+    } else {
+      return null;
+    }
+  } catch (\Throwable $th) {
+    return null;
+  }
+}

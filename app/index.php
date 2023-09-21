@@ -34,7 +34,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       ?>
           <article class="entrada">
             <h2>
-              <a href="get-post?id=<?= $post["id"] ?>">
+              <a href="get-post.php?id=<?= $post["id"] ?>">
                 <?= $post["titulo"] ?>
               </a>
             </h2>
