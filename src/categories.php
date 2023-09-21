@@ -17,7 +17,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog de videojuegos</title>
+  <title>Nueva categorías videojuegos</title>
   <link rel="stylesheet" href="../dist/output.css">
 </head>
 
@@ -31,10 +31,15 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       <p class="mb-5">Añade nuevas categorías para el blog de videojuegos y para que los otros usuarios puedan crear sus entradas en base a las nuevas categorías creadas.</p>
       <form action="save-category.php" method="POST">
         <div class="w-64">
-          <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "general") : "" ?>
+          <?php if (isset($_SESSION["Ccomplete"])) : ?>
+            <div class="alerta alerta-exito">
+              <?= $_SESSION["Ccomplete"] ?>
+            </div>
+          <?php endif ?>
+          <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Cgeneral") : "" ?>
         </div>
         <div class="w-64">
-          <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "category") : "" ?>
+          <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Ccategory") : "" ?>
         </div>
         <div class="flex w-full flex-col">
           <label for="name" class="w-full block mb-1 md:mb-2">Nombre</label>

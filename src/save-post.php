@@ -16,13 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   $errors = array();
   if (empty($title)) {
-    $errors["title"] = "El título no es válido.";
+    $errors["Ptitle"] = "El título no es válido.";
   }
   if (empty($description)) {
-    $errors["description"] = "La descripción no es válido.";
+    $errors["Pdescription"] = "La descripción no es válido.";
   }
   if (empty($category) && !is_numeric($category)) {
-    $errors["category"] = "La categoría no es válida.";
+    $errors["Pcategory"] = "La categoría no es válida.";
   }
 
   if (count($errors) == 0) {
@@ -34,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       try {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-        header("Location: index.php");
+        $_SESSION["Pcomplete"] = "Nueva entrada creada.";
       } catch (\Throwable $th) {
-        $errors["general"] = "Error al insertar registro.";
+        $errors["Pgeneral"] = "Error al insertar registro.";
+        mysqli_stmt_close($stmt);
       }
-      mysqli_stmt_close($stmt);
     }
   }
   $_SESSION["errors"] = $errors;

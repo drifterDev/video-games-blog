@@ -17,7 +17,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $_SESSION["user"]["id"] ?></title>
+  <title>Nueva entrada al blog</title>
   <link rel="stylesheet" href="../dist/output.css">
 </head>
 
@@ -32,20 +32,25 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       <form action="save-post.php" method="POST">
         <div class="flex w-full flex-col">
           <div class="w-64">
-            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "general") : "" ?>
+            <?php if (isset($_SESSION["Pcomplete"])) : ?>
+              <div class="alerta alerta-exito">
+                <?= $_SESSION["Pcomplete"] ?>
+              </div>
+            <?php endif ?>
+            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Pgeneral") : "" ?>
           </div>
           <div class="w-64">
-            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "title") : "" ?>
+            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Ptitle") : "" ?>
           </div>
           <label for="title" class="w-full block mb-1 md:mb-2">Título</label>
           <input type="text" id="title" name="title" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded">
           <div class="w-64">
-            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "description") : "" ?>
+            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Pdescription") : "" ?>
           </div>
           <label for="description" class="w-full block mb-1 md:mb-2">Descripción</label>
           <textarea name="description" id="description" cols="20" rows="5" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded"></textarea>
           <div class="w-64">
-            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "category") : "" ?>
+            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Pcategory") : "" ?>
           </div>
           <label for="category" class="w-full block mb-1 md:mb-2">Categoría</label>
           <select name="category" id="category" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded">

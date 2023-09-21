@@ -18,8 +18,14 @@ function show_errors($errors, $field)
 function delete_errors()
 {
   unset($_SESSION["errors"]);
-  unset($_SESSION["general"]);
+  unset($_SESSION["Cgeneral"]);
+  unset($_SESSION["Dgeneral"]);
+  unset($_SESSION["Pgeneral"]);
   unset($_SESSION["error_login"]);
+  unset($_SESSION["complete"]);
+  unset($_SESSION["Dcomplete"]);
+  unset($_SESSION["Pcomplete"]);
+  unset($_SESSION["Ccomplete"]);
   // $_SESSION["errors"] = null;
   // $delete = session_unset();
   // return $delete;

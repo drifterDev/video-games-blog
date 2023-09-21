@@ -19,13 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         mysqli_stmt_bind_param($stmt, "s", $name);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-        header("Location: index.php");
+        $_SESSION["Ccomplete"] = "Nueva categoría creada.";
+        // header("Location: index.php");
       } catch (\Throwable $th) {
-        $errors["general"] = "Error al ingresar la categoria";
+        $errors["Cgeneral"] = "Error al ingresar la categoria";
       }
     }
   } else {
-    $errors["category"] = "La categoría no es válida.";
+    $errors["Ccategory"] = "La categoría no es válida.";
   }
 }
 $_SESSION["errors"] = $errors;
