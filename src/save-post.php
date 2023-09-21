@@ -33,6 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       mysqli_stmt_bind_param($stmt, "iiss", $user, $category, $title, $description);
       try {
         mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        header("Location: index.php");
       } catch (\Throwable $th) {
         $errors["general"] = "Error al insertar registro.";
       }
@@ -41,5 +43,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
   $_SESSION["errors"] = $errors;
 }
-
-header("Location: index.php");
+header("Location: posts.php");

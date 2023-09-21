@@ -8,17 +8,25 @@
 
 require_once("includes/Connection.php");
 if (!isset($_SESSION)) session_start();
+$errors = array();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $name = $_POST["name"] ?? '';
   if (!empty($name) && !is_numeric($name)) {
     $sql = "INSERT INTO categorias (nombre) VALUES (?)";
     $stmt = mysqli_prepare($db, $sql);
     if ($stmt) {
-      mysqli_stmt_bind_param($stmt, "s", $name);
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_close($stmt);
+      try {
+        mysqli_stmt_bind_param($stmt, "s", $name);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        header("Location: index.php");
+      } catch (\Throwable $th) {
+        $errors["general"] = "Error al ingresar la categoria";
+      }
     }
+  } else {
+    $errors["category"] = "La categoría no es válida.";
   }
 }
-
-header("Location: index.php");
+$_SESSION["errors"] = $errors;
+header("Location: categories.php");

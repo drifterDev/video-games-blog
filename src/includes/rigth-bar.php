@@ -14,7 +14,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
     <div class="bg-white p-5 mx-5 mb-5 md:mt-5 lg:mt-8 flex flex-wrap">
       <div class="w-full">
         <h3 class="ml-3 md:ml-0 text-lg md:text-xl font-bold">
-          <?= "Bienvenido, " . $_SESSION["user"]["nombre"] . " " . $_SESSION["user"]["apellidos"] . "!" ?>
+          <?= "¡Bienvenido, " . $_SESSION["user"]["nombre"] . " " . $_SESSION["user"]["apellidos"] . "!" ?>
         </h3>
       </div>
       <div class="mx-3 md:mx-0 md:w-full flex md:justify-center">

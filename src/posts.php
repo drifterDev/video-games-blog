@@ -6,10 +6,10 @@ Este código se proporciona bajo la Licencia MIT.
 Para más información, consulta el archivo LICENSE en la raíz del repositorio. 
 -->
 
+<?php if (!isset($_SESSION)) session_start() ?>
 <?php require_once("includes/redirect.php") ?>
 <?php require_once("includes/Connection.php") ?>
 <?php require_once("includes/helpers.php") ?>
-<?php if (!isset($_SESSION)) session_start() ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -31,10 +31,22 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       <p class="mb-5">Añade nuevas entradas para el blog de videojuegos, para que los otros usuarios puedan leer y disfrutar de ellas.</p>
       <form action="save-post.php" method="POST">
         <div class="flex w-full flex-col">
+          <div class="w-64">
+            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "general") : "" ?>
+          </div>
+          <div class="w-64">
+            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "title") : "" ?>
+          </div>
           <label for="title" class="w-full block mb-1 md:mb-2">Título</label>
           <input type="text" id="title" name="title" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded">
+          <div class="w-64">
+            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "description") : "" ?>
+          </div>
           <label for="description" class="w-full block mb-1 md:mb-2">Descripción</label>
           <textarea name="description" id="description" cols="20" rows="5" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded"></textarea>
+          <div class="w-64">
+            <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "category") : "" ?>
+          </div>
           <label for="category" class="w-full block mb-1 md:mb-2">Categoría</label>
           <select name="category" id="category" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded">
             <?php

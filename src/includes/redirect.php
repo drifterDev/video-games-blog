@@ -9,5 +9,5 @@
 // if (!isset($_SESSION)) session_start();
 
 if (!isset($_SESSION["user"])) {
-  header("Locartion: index.php");
+  header("Location: index.php");
 }
