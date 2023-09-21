@@ -17,18 +17,10 @@ function show_errors($errors, $field)
 
 function delete_errors()
 {
-  unset($_SESSION["errors"]);
-  unset($_SESSION["Cgeneral"]);
-  unset($_SESSION["Dgeneral"]);
-  unset($_SESSION["Pgeneral"]);
-  unset($_SESSION["error_login"]);
-  unset($_SESSION["complete"]);
-  unset($_SESSION["Dcomplete"]);
-  unset($_SESSION["Pcomplete"]);
-  unset($_SESSION["Ccomplete"]);
-  // $_SESSION["errors"] = null;
-  // $delete = session_unset();
-  // return $delete;
+  $delete = ["errors", "Cgeneral", "Dgeneral", "Pgeneral", "error_login", "complete", "Dcomplete", "Pcomplete", "Ccomplete"];
+  foreach ($delete as $key => $value) {
+    unset($_SESSION[$value]);
+  }
 }
 
 function getCategories($db)
@@ -41,14 +33,36 @@ function getCategories($db)
   return array();
 }
 
-function getPosts($db)
+function getPosts($db, $limit = false, $category = null)
 {
   $sql = "SELECT e.*, c.nombre AS 'categoria' FROM entradas e" .
-    " INNER JOIN categorias c ON e.categoria_id=c.id" .
-    " ORDER BY e.id DESC LIMIT 4";
+    " INNER JOIN categorias c ON ";
+  if (isset($category) && !empty($category)) {
+    $sql .= "e.categoria_id=$category AND ";
+  }
+  $sql .= "e.categoria_id=c.id ORDER BY e.id DESC ";
+  if ($limit) {
+    $sql .= "LIMIT 4";
+  }
   $posts = mysqli_query($db, $sql);
-  if ($posts && mysqli_num_rows($posts) >= 0) {
+  if ($posts && mysqli_num_rows($posts) > 0) {
     return $posts;
   }
+  $_SESSION["errors"]["getPost"] = "No hay entradas en esta categoría.";
   return array();
+}
+
+function getCategory($db, $id)
+{
+  $sql = "SELECT * FROM categorias WHERE id=$id";
+  try {
+    $category = mysqli_query($db, $sql);
+    if ($category && mysqli_num_rows($category) > 0) {
+      return $category->fetch_assoc();
+    } else {
+      return null;
+    }
+  } catch (\Throwable $th) {
+    return null;
+  }
 }

@@ -28,7 +28,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
     <main id="main" class="w-full m-5 lg:mt-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
       <h1 class="text-2xl md:text-3xl font-bold mb-4">Ultimas entradas</h1>
       <?php
-      $posts = getPosts($db, true);
+      $posts = getPosts($db, false);
       if (mysqli_num_rows($posts) > 0) :
         while ($post = mysqli_fetch_assoc($posts)) :
       ?>
@@ -39,15 +39,12 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
               </a>
             </h2>
             <span><?= $post["categoria"] . " | " . $post["fecha"] ?></span>
-            <p><?= substr($post["descripcion"], 0, 200) ?>...</p>
+            <p><?= $post["descripcion"] ?></p>
           </article>
       <?php
         endwhile;
       endif;
       ?>
-      <div class="w-full flex justify-center">
-        <a href="all-posts.php" class="boton text-lg font-bold boton-verde">Ver todas las entradas</a>
-      </div>
     </main>
     <?php require_once("includes/rigth-bar.php") ?>
   </div>

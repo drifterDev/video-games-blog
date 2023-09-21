@@ -6,8 +6,6 @@
 // Este código se proporciona bajo la Licencia MIT.
 // Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 
-// if (!isset($_SESSION)) session_start();
-
 if (!isset($_SESSION["user"])) {
   header("Location: index.php");
 }
