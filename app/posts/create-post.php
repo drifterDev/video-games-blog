@@ -7,9 +7,9 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 -->
 
 <?php if (!isset($_SESSION)) session_start() ?>
-<?php require_once("includes/redirect.php") ?>
-<?php require_once("includes/Connection.php") ?>
-<?php require_once("includes/helpers.php") ?>
+<?php require_once("../includes/redirect.php") ?>
+<?php require_once("../includes/Connection.php") ?>
+<?php require_once("../includes/helpers.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -18,18 +18,18 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog de videojuegos</title>
-  <link rel="stylesheet" href="assets/css/output.css">
+  <link rel="stylesheet" href="../assets/css/output.css">
 </head>
 
-<body class="bg-[url('../assets/img/cubes.png')]">
+<body class="bg-[url('../img/cubes.png')]">
 
-  <?php require_once("includes/header.php") ?>
+  <?php require_once("../includes/header.php") ?>
   <div id="container" class="flex flex-wrap">
     <!-- Caja principal -->
-    <main id="main" class="w-full m-5 lg:mt-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
+    <main id="main" class="w-full m-5 lg:my-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
       <h1 class="text-2xl md:text-3xl font-bold mb-4">Crea nuevas entradas</h1>
       <p class="mb-5">Añade nuevas entradas para el blog de videojuegos, para que los otros usuarios puedan leer y disfrutar de ellas.</p>
-      <form action="save/post.php?val=create" method="POST">
+      <form action="create.php?val=create" method="POST">
         <div class="flex w-full flex-col">
           <div class="w-64">
             <?php if (isset($_SESSION["Pcomplete"])) : ?>
@@ -71,9 +71,9 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       </form>
 
     </main>
-    <?php require_once("includes/rigth-bar.php") ?>
+    <?php require_once("../includes/right-bar.php") ?>
   </div>
-  <?php require_once("includes/footer.php") ?>
+  <?php require_once("../includes/footer.php") ?>
 </body>
 
 </html>

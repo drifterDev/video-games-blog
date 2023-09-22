@@ -7,9 +7,9 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 -->
 
 <?php if (!isset($_SESSION)) session_start() ?>
-<?php require_once("includes/redirect.php") ?>
-<?php require_once("includes/Connection.php") ?>
-<?php require_once("includes/helpers.php") ?>
+<?php require_once("../includes/redirect.php") ?>
+<?php require_once("../includes/Connection.php") ?>
+<?php require_once("../includes/helpers.php") ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -17,19 +17,19 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Información del usuario</title>
-  <link rel="stylesheet" href="assets/css/output.css">
+  <title>Blog de videojuegos</title>
+  <link rel="stylesheet" href="../assets/css/output.css">
 </head>
 
 <body class="bg-[url('../assets/img/cubes.png')]">
 
-  <?php require_once("includes/header.php") ?>
+  <?php require_once("../includes/header.php") ?>
   <div id="container" class="flex flex-wrap">
     <!-- Caja principal -->
-    <main id="main" class="w-full m-5 lg:mt-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
+    <main id="main" class="w-full m-5 lg:my-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
       <h1 class="text-2xl md:text-3xl font-bold mb-4">Actualiza tu información personal</h1>
       <p class="mb-5">En esta sección de la página web podrás actualizar tu información personal en cualquier momento.</p>
-      <form action="save/data.php" method="POST">
+      <form action="edit.php" method="POST">
         <div class="flex w-full flex-col">
           <div class="w-64">
             <?php if (isset($_SESSION["Dcomplete"])) : ?>
@@ -62,9 +62,9 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
         <input type="submit" value="Guardar" class="boton boton-azul">
       </form>
     </main>
-    <?php require_once("includes/rigth-bar.php") ?>
+    <?php require_once("../includes/right-bar.php") ?>
   </div>
-  <?php require_once("includes/footer.php") ?>
+  <?php require_once("../includes/footer.php") ?>
   <?php delete_errors() ?>
 </body>
 

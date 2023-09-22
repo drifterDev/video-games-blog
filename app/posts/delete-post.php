@@ -6,7 +6,7 @@
 // Este código se proporciona bajo la Licencia MIT.
 // Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 
-require_once("includes/Connection.php");
+require_once("../includes/Connection.php");
 if (!isset($_SESSION)) session_start();
 if (isset($_SESSION["user"]) && isset($_GET["id"])) {
   $sql = "DELETE FROM entradas WHERE usuario_id=" . $_SESSION["user"]["id"] . " AND id=" . $_GET["id"];
@@ -16,5 +16,5 @@ if (isset($_SESSION["user"]) && isset($_GET["id"])) {
   } catch (\Throwable $th) {
   }
 }
-header("Location: index.php");
+header("Location: ../index.php");
 exit();

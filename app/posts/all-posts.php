@@ -6,8 +6,8 @@ Este código se proporciona bajo la Licencia MIT.
 Para más información, consulta el archivo LICENSE en la raíz del repositorio. 
 -->
 
-<?php require_once("includes/Connection.php") ?>
-<?php require_once("includes/helpers.php") ?>
+<?php require_once("../includes/Connection.php") ?>
+<?php require_once("../includes/helpers.php") ?>
 <?php if (!isset($_SESSION)) session_start() ?>
 
 <!DOCTYPE html>
@@ -17,15 +17,15 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog de videojuegos</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/output.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/output.css">
 </head>
 
 <body class="bg-[url('../img/cubes.png')]">
 
-  <?php require_once("includes/header.php") ?>
+  <?php require_once("../includes/header.php") ?>
   <div id="container" class="flex flex-wrap">
     <!-- Caja principal -->
-    <main id="main" class="w-full m-5 lg:mt-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
+    <main id="main" class="w-full m-5 lg:my-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
       <h1 class="text-2xl md:text-3xl font-bold mb-4">Ultimas entradas</h1>
       <?php
       $posts = getPosts($db, false);
@@ -46,9 +46,9 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       endif;
       ?>
     </main>
-    <?php require_once("includes/rigth-bar.php") ?>
+    <?php require_once("../includes/right-bar.php") ?>
   </div>
-  <?php require_once("includes/footer.php") ?>
+  <?php require_once("../includes/footer.php") ?>
 </body>
 
 </html>

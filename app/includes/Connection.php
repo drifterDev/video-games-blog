@@ -15,5 +15,3 @@ $db = mysqli_connect($server, $username, $password, $database);
 if (mysqli_connect_error()) {
   die("Falló la conexión: " . mysqli_connect_error());
 }
-
-// mysqli_query($db, "SET NAMES 'utf-8';");

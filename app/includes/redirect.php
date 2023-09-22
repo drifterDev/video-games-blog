@@ -7,5 +7,5 @@
 // Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 
 if (!isset($_SESSION["user"])) {
-  header("Location: index.php");
+  header("Location: ../index.php");
 }

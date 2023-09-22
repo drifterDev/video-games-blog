@@ -30,6 +30,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 }
 $_SESSION["errors"] = $errors;
-header("Location: ../categories.php");
+header("Location: create-categories.php");
 exit();
-

@@ -61,8 +61,8 @@ if (isset($_SESSION["user"]) && isset($_POST["title"]) && isset($_POST["descript
   $_SESSION["errors"] = $errors;
 }
 if (isset($_GET["val"]) && $_GET["val"] == "edit") {
-  header("Location: ../edit-post.php?id=" . $_GET["id"]);
+  header("Location: edit-post.php?id=" . $_GET["id"]);
 } else {
-  header("Location: ../posts.php");
+  header("Location: create-post.php");
 }
 exit();

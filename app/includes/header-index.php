@@ -26,7 +26,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
         while ($category = mysqli_fetch_assoc($categories)) :
       ?>
           <li>
-            <a href="../categories/get-category.php?id=<?= $category["id"] ?>"><?= $category["nombre"] ?></a>
+            <a href="categories/get-category.php?id=<?= $category["id"] ?>"><?= $category["nombre"] ?></a>
           </li>
       <?php
         endwhile;
