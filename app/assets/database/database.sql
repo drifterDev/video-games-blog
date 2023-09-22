@@ -1,12 +1,6 @@
-CREATE DATABASE dbs_blog;
+CREATE DATABASE nombre_de_la_base_de_datos;
 
-USE dbs_blog;
-
-DROP TABLE IF EXISTS usuarios;
-
-DROP TABLE IF EXISTS categorias;
-
-DROP TABLE IF EXISTS entradas;
+USE nombre_de_la_base_de_datos;
 
 CREATE TABLE
     usuarios(
@@ -46,6 +40,8 @@ SET NAMES 'utf8mb4';
 
 INSERT INTO categorias (nombre)
 VALUES ('Aventuras'), ('Estrategia'), ('Acción');
+
+/* Ejecutar cuando se tenga dos o más usuarios registrados */
 
 INSERT INTO
     entradas (

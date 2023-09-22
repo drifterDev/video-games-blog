@@ -16,7 +16,7 @@ _Perfil de Usuario Personalizado:_ Edita tu perfil según tus preferencias, incl
 
 _Motor de Búsqueda:_ Explora nuestro blog de manera eficiente utilizando nuestro buscador, que te permite buscar publicaciones por título o contenido.
 
-## Vistazo rápido
+## Vista previa
 
 <img src="./app/assets/img/captura.png">
 
@@ -59,7 +59,9 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
    define("PASSWORD", "tu_contraseña");
    ```
 
-## Sin xampp
+5. Ejecutar el script SQL `app/assets/database/database.sql` en tu servidor MySQL para crear la base de datos y las tablas necesarias para el proyecto (Recuerda cambiar el valor de nombre_de_la_base_de_datos).
+
+## Ejecutar sin xampp
 
 1. Ubicarse en la raíz del proyecto y ejecutar el comando para iniciar el servidor PHP:
 
@@ -69,7 +71,7 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 2. Si el navegador no permite el acceso a los estilos CSS, utilizar la extensión "PHP Server" de Visual Studio Code para iniciar el servidor PHP" y acceder al proyecto.
 
-## Con xampp
+## Ejecutar con xampp
 
 1. Abre el panel de control de XAMPP y asegúrate de que los servicios de Apache y MySQL estén "Running" (ejecutándose). Si no lo están, haz clic en los botones "Start" junto a esos servicios para iniciarlos.
 
