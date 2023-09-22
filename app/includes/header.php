@@ -9,7 +9,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 <header id="header" class="bg-blue-500 text-white pt-5 pb-3 md:py-5">
   <!-- Logo -->
   <div id="logo" class="md:text-5xl text-4xl font-bold pl-5 ease-in-out duration-300  hover:text-blue-200 cursor-pointer">
-    <a href="index.php">
+    <a href="../index.php">
       Blog de videojuegos
     </a>
   </div>
@@ -18,7 +18,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <nav id="nav" class="w-full px-5 mt-5">
     <ul class="barra-navegacion">
       <li>
-        <a href="index.php">Inicio</a>
+        <a href="../index.php">Inicio</a>
       </li>
       <?php
       $categories = getCategories($db);
@@ -32,10 +32,10 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
         endwhile;
       endif; ?>
       <li>
-        <a href="index.php">Sobre mí</a>
+        <a href="../index.php">Sobre mí</a>
       </li>
       <li>
-        <a href="index.php">Contacto</a>
+        <a href="../index.php">Contacto</a>
       </li>
     </ul>
   </nav>

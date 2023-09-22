@@ -40,9 +40,15 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
         </a>
         <span>Creado por <?= $post["usuario"] ?> en <?= $post["fecha"] ?></span>
         <p><?= $post["descripcion"] ?></p>
-        <div class="flex justify-center mb-5">
-          <img src="../assets/img/post.jpg" alt="Imagen del post" class="w-full max-w-2xl rounded">
-        </div>
+        <?php if ($post["id"] % 2 == 0) : ?>
+          <div class="flex justify-center mb-5">
+            <img src="../assets/img/post.jpg" alt="Imagen del post" class="w-full max-w-2xl rounded">
+          </div>
+        <?php else : ?>
+          <div class="flex justify-center mb-5">
+            <img src="../assets/img/post2.jpg" alt="Imagen del post" class="w-full max-w-2xl rounded">
+          </div>
+        <?php endif; ?>
         <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["id"] == $post["usuario_id"]) : ?>
           <div class="w-full flex justify-center flex-wrap">
             <div class="mx-5 md:w-64 flex md:justify-center">

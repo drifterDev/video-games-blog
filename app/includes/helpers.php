@@ -33,14 +33,18 @@ function getCategories($db)
   return array();
 }
 
-function getPosts($db, $limit = false, $category = null)
+function getPosts($db, $limit = false, $category = null, $like = null)
 {
   $sql = "SELECT e.*, c.nombre AS 'categoria' FROM entradas e" .
     " INNER JOIN categorias c ON ";
   if (isset($category) && !empty($category)) {
     $sql .= "e.categoria_id=$category AND ";
   }
-  $sql .= "e.categoria_id=c.id ORDER BY e.id DESC ";
+  $sql .= "e.categoria_id=c.id";
+  if (isset($like) && !empty($like)) {
+    $sql .= " WHERE e.titulo LIKE '%$like%' OR e.descripcion LIKE '%$like%'";
+  }
+  $sql .= " ORDER BY e.id DESC ";
   if ($limit) {
     $sql .= "LIMIT 4";
   }

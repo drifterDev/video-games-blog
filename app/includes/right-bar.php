@@ -35,6 +35,19 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
     </div>
   <?php endif; ?>
 
+  <!-- find -->
+  <div id="buscardor" class="bg-white p-5 mx-5 mb-5 md:mt-5 lg:mt-8 flex flex-col">
+    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-5">Busca</h3>
+    <form action="../find.php" class="formulario flex flex-col" method="POST">
+      <div class="entrada-formulario">
+        <label for="value">Entrada</label>
+        <input type="value" name="value" id="value" />
+      </div>
+      <div class="w-full flex justify-center md:justify-start">
+        <input type="submit" class="boton boton-azul" value="Buscar">
+      </div>
+    </form>
+  </div>
   <div id="login" class="bg-white p-5 mx-5 mb-5 md:mt-5 lg:mt-8 flex flex-col">
     <?php if (isset($_SESSION["error_login"])) : ?>
       <h3 class="text-xl md:text-2xl font-bold mb-2">Identificate</h3>
