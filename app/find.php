@@ -45,7 +45,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
               </a>
             </h2>
             <span><?= $post["categoria"] . " | " . $post["fecha"] ?></span>
-            <p><?= $post["descripcion"] ?></p>
+            <p><?= substr($post["descripcion"], 0, 200) ?>...</p>
           </article>
       <?php
         endwhile;
