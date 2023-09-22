@@ -11,12 +11,15 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 <aside id="sidebar" class="w-full lg:w-[28%] md:w-[32%]">
   <!-- login -->
   <?php if (isset($_SESSION["user"])) : ?>
-    <div class="bg-white p-5 mx-5 mb-5 md:mt-5 lg:mt-8 flex flex-wrap">
+    <div class="bg-white p-5 mx-5 mb-5 md:mt-5 lg:mt-8 flex justify-center md:justify-start flex-wrap">
       <div class="w-full">
-        <h3 class="ml-3 md:ml-0 text-lg md:text-xl font-bold">
+        <h3 class="ml-3 md:ml-0 text-lg md:text-xl font-bold text-center md:text-left">
           <?= "¡Bienvenido, " . $_SESSION["user"]["nombre"] . " " . $_SESSION["user"]["apellidos"] . "!" ?>
         </h3>
       </div>
+      <?php if (isset($_SESSION["success"])) : ?>
+        <div class='alerta alerta-exito'><?= $_SESSION["success"] ?></div>
+      <?php endif; ?>
       <div class="mx-3 md:mx-0 md:w-full flex md:justify-center">
         <a href="posts.php" class="w-48 boton boton-verde">Crear entradas</a>
       </div>
@@ -57,7 +60,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
     </form>
   </div>
   <!-- register -->
-  <div id="register" class="bg-white p-5 mx-5 mb-5">
+  <div id="register" class="bg-white p-5 mx-5 mb-5 md:mb-8">
     <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-5">Registrate</h3>
     <!-- Mostar alertas -->
     <?php if (isset($_SESSION["complete"])) : ?>

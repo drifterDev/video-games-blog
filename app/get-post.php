@@ -35,14 +35,24 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       ?>
       <h1 class="text-2xl md:text-3xl font-bold mb-4"> <?= $post["titulo"] ?></h1>
       <article class="post">
-        <a href="get-category.php?id=<?= $post["categoria_id"] ?>">
+        <a class="categoria" href="get-category.php?id=<?= $post["categoria_id"] ?>">
           <?= $post["categoria"] ?>
         </a>
-        <span><?= $post["fecha"] ?></span>
+        <span>Creado por <?= $post["usuario"] ?> en <?= $post["fecha"] ?></span>
         <p><?= $post["descripcion"] ?></p>
-        <div class="flex justify-center">
+        <!-- <div class="flex justify-center mb-5">
           <img src="assets/img/post.jpg" alt="Imagen del post" class="w-full max-w-2xl rounded">
-        </div>
+        </div> -->
+        <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["id"] == $post["usuario_id"]) : ?>
+          <div class="w-full flex justify-center flex-wrap">
+            <div class="mx-5 md:w-64 flex md:justify-center">
+              <a href="edit-post.php?id=<?= $post["id"] ?>" class="w-48 boton boton-amarillo">Editar entrada</a>
+            </div>
+            <div class="mx-5 md:w-64 flex md:justify-center">
+              <a href="delete-post.php?id=<?= $post["id"] ?>" class="w-48 boton boton-rojo">Borrar entrada</a>
+            </div>
+          </div>
+        <?php endif; ?>
       </article>
     </main>
     <?php require_once("includes/rigth-bar.php") ?>

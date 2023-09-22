@@ -44,7 +44,7 @@
     @apply text-gray-500 text-sm;
   }
 
-  .post a {
+  .post .categoria {
     @apply bg-blue-300 text-blue-600 px-2 py-1 rounded cursor-pointer mr-5;
   }
 

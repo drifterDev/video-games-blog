@@ -17,7 +17,7 @@ function show_errors($errors, $field)
 
 function delete_errors()
 {
-  $delete = ["errors", "Cgeneral", "Dgeneral", "Pgeneral", "error_login", "complete", "Dcomplete", "Pcomplete", "Ccomplete"];
+  $delete = ["errors", "success", "Cgeneral", "Dgeneral", "Pgeneral", "Egeneral", "error_login", "complete", "Dcomplete", "Pcomplete", "Ccomplete", "Ecomplete"];
   foreach ($delete as $key => $value) {
     unset($_SESSION[$value]);
   }
@@ -70,8 +70,9 @@ function getCategory($db, $id)
 function getPost($db, $id)
 {
   if (!isset($id)) return null;
-  $sql = "SELECT e.*, c.nombre AS 'categoria' FROM entradas e " .
-    "INNER JOIN categorias c ON e.categoria_id=c.id WHERE e.id=$id";
+  $sql = "SELECT e.*, c.nombre AS 'categoria', CONCAT(u.nombre, ' ', u.apellidos) AS 'usuario' " .
+    "FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id " .
+    "INNER JOIN usuarios u ON e.usuario_id = u.id WHERE e.id = $id";
   try {
     $post = mysqli_query($db, $sql);
     if ($post && mysqli_num_rows($post) > 0) {
