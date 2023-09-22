@@ -30,7 +30,7 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 **Recomendación:** Para facilitar aún más el desarrollo y la prueba de tu proyecto PHP en Visual Studio Code, te recomendamos instalar la extensión "PHP Server" disponible en el Marketplace de VS Code. Esta extensión proporciona una forma conveniente de ejecutar aplicaciones PHP directamente desde el editor. Puedes encontrar la extensión [aquí](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver).
 
-## Instalación sin xampp
+## Instalación
 
 1. Clona este repositorio en tu máquina local o descargar la carpeta comprimida del proyecto:
 
@@ -59,15 +59,17 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
    define("PASSWORD", "tu_contraseña");
    ```
 
-5. Ubicarse en la raíz del proyecto y ejecutar el comando para iniciar el servidor PHP:
+## Sin xampp
+
+1. Ubicarse en la raíz del proyecto y ejecutar el comando para iniciar el servidor PHP:
 
    ```bash
    php -S localhost:8000 app/index.php
    ```
 
-6. Si el navegador no permite el acceso a los estilos CSS, utilizar la extensión "PHP Server" de Visual Studio Code para iniciar el servidor PHP" y acceder al proyecto.
+2. Si el navegador no permite el acceso a los estilos CSS, utilizar la extensión "PHP Server" de Visual Studio Code para iniciar el servidor PHP" y acceder al proyecto.
 
-## Instalación con xampp
+## Con xampp
 
 1. Abre el panel de control de XAMPP y asegúrate de que los servicios de Apache y MySQL estén "Running" (ejecutándose). Si no lo están, haz clic en los botones "Start" junto a esos servicios para iniciarlos.
 
