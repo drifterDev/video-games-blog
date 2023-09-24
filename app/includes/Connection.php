@@ -7,9 +7,10 @@
 // Para más información, consulta el archivo LICENSE en la raíz del repositorio. 
 
 define("SERVER", "localhost");
-define("DATABASE", "nombre_de_la_base_de_datos");
-define("USERNAME", "tu_usuario");
-define("PASSWORD", "tu_contraseña");
+define("DATABASE", "dbs_blog");
+define("USERNAME", "root");
+define("PASSWORD", "");
+
 
 $db = mysqli_connect(SERVER, USERNAME, PASSWORD, DATABASE);
 
