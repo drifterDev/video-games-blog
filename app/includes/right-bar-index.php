@@ -13,7 +13,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <?php if (isset($_SESSION["user"])) : ?>
     <div class="bg-white p-5 mx-5 mb-5 md:mt-5 lg:mt-8 flex justify-center md:justify-start flex-wrap">
       <div class="w-full">
-        <h3 class="ml-3 md:ml-0 text-lg md:text-xl font-bold text-center md:text-left">
+        <h3 class="ml-3 md:ml-0 text-lg md:text-xl font-bold text-center">
           <?= "¡Bienvenido, " . $_SESSION["user"]["nombre"] . " " . $_SESSION["user"]["apellidos"] . "!" ?>
         </h3>
       </div>
