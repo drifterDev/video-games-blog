@@ -60,7 +60,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
     <?php endif; ?>
     <form action="../login/login.php" class="formulario flex flex-col" method="POST">
       <div class="entrada-formulario">
-        <label for="email">Email</label>
+        <label for="email">Correo</label>
         <input type="email" name="email" id="email" />
       </div>
       <div class="entrada-formulario">

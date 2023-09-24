@@ -21,7 +21,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <link rel="stylesheet" href="../assets/css/output.css">
 </head>
 
-<body class="bg-[url('../assets/img/cubes.png')]">
+<body class="bg-[url('../img/cubes.png')]">
 
   <?php require_once("../includes/header.php") ?>
   <div id="container" class="flex flex-wrap">
@@ -56,7 +56,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
           <div class="w-64">
             <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Demail") : "" ?>
           </div>
-          <label for="email" class="w-full block mb-1 md:mb-2">Nuevo email</label>
+          <label for="email" class="w-full block mb-1 md:mb-2">Nuevo correo</label>
           <input type="text" id="email" name="email" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded" value="<?= $_SESSION["user"]["email"] ?>">
         </div>
         <input type="submit" value="Guardar" class="boton boton-azul">

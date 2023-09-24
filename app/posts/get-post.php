@@ -35,7 +35,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       ?>
       <h1 class="text-2xl md:text-3xl font-bold mb-4"> <?= $post["titulo"] ?></h1>
       <article class="post">
-        <a class="categoria" href="categories/get-category.php?id=<?= $post["categoria_id"] ?>">
+        <a class="categoria" href="../categories/get-category.php?id=<?= $post["categoria_id"] ?>">
           <?= $post["categoria"] ?>
         </a>
         <span>Creado por <?= $post["usuario"] ?> en <?= $post["fecha"] ?></span>

@@ -22,13 +22,13 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
 
 <body class="bg-[url('../img/cubes.png')]">
 
-  <?php require_once("includes/header.php") ?>
+  <?php require_once("includes/header-index.php") ?>
   <div id="container" class="flex flex-wrap">
     <!-- Caja principal -->
     <main id="main" class="w-full m-5 lg:my-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
       <?php
       if (!isset($_POST["value"])) {
-        header("Location: ../index.php");
+        header("Location: index.php");
         exit();
       }
       ?>
@@ -40,7 +40,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       ?>
           <article class="entrada">
             <h2>
-              <a href="../posts/get-post.php?id=<?= $post["id"] ?>">
+              <a href="posts/get-post.php?id=<?= $post["id"] ?>">
                 <?= $post["titulo"] ?>
               </a>
             </h2>
