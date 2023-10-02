@@ -1,8 +1,8 @@
-# Video games blog
+# Blog de videojuegos
 
 El propósito de este proyecto es recrear un blog de videojuegos donde los usuarios puedan registrarse, iniciar sesión, crear, editar y eliminar publicaciones, entre otras funciones.
 
-Se empleó Tailwind CSS para la maquetación y PHP en gran medida para la lógica del backend.
+Se empleó Tailwind CSS para la maquetación, MySQL como gestor de base de datos y PHP para el backend.
 
 ## Funcionalidades
 
@@ -18,7 +18,7 @@ _Motor de Búsqueda:_ Explora nuestro blog de manera eficiente utilizando nuestr
 
 ## Vista previa
 
-<img src="./app/assets/img/captura.png">
+![Vista previa 1](./app/assets/img/preview.png)
 
 ## Requisitos previos
 
@@ -27,8 +27,6 @@ Antes de comenzar, asegúrate de tener instalado `npm` en tu sistema. Si no lo t
 Además, ten en cuenta que para ejecutar este proyecto de manera completa, necesitarás tener PHP y un servidor MySQL configurado en tu entorno de desarrollo. Asegúrate de que tu servidor PHP esté funcionando correctamente y que tengas acceso a una base de datos MySQL para que todas las funcionalidades del proyecto se ejecuten sin problemas.
 
 **Recomendación:** Para facilitar la configuración de un servidor PHP y MySQL en tu entorno de desarrollo, recomiendo utilizar XAMPP, una solución todo en uno que incluye Apache (para PHP) y MySQL en un solo paquete. Puedes descargar XAMPP desde [el sitio web oficial de XAMPP](https://www.apachefriends.org/index.html). Esto simplificará la configuración y te permitirá comenzar rápidamente con tu proyecto.
-
-**Recomendación:** Para facilitar aún más el desarrollo y la prueba de tu proyecto PHP en Visual Studio Code, te recomendamos instalar la extensión "PHP Server" disponible en el Marketplace de VS Code. Esta extensión proporciona una forma conveniente de ejecutar aplicaciones PHP directamente desde el editor. Puedes encontrar la extensión [aquí](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver).
 
 ## Instalación
 
@@ -61,16 +59,6 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 5. Ejecutar el script SQL `app/assets/database/database.sql` en tu servidor MySQL para crear la base de datos y las tablas necesarias para el proyecto (Recuerda cambiar el valor de nombre_de_la_base_de_datos).
 
-## Ejecutar sin xampp
-
-1. Ubicarse en la raíz del proyecto y ejecutar el comando para iniciar el servidor PHP:
-
-   ```bash
-   php -S localhost:8000 app/index.php
-   ```
-
-2. Si el navegador no permite el acceso a los estilos CSS, utilizar la extensión "PHP Server" de Visual Studio Code para iniciar el servidor PHP" y acceder al proyecto.
-
 ## Ejecutar con xampp
 
 1. Abre el panel de control de XAMPP y asegúrate de que los servicios de Apache y MySQL estén "Running" (ejecutándose). Si no lo están, haz clic en los botones "Start" junto a esos servicios para iniciarlos.
@@ -78,6 +66,45 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 2. Coloca este proyecto en el directorio `htdocs` de XAMPP. Por defecto, el directorio `htdocs` se encuentra en la carpeta de instalación de XAMPP.
 
 3. Abre tu navegador web y accede al proyecto utilizando la URL `http://localhost/nombre_del_proyecto`. Reemplaza "nombre_de_tu_proyecto" con la carpeta o ruta relativa donde esté el proyecto dentro del directorio `htdocs`. Por ejemplo, si el proyecto está en `C:\xampp\htdocs\proyecto`, debes acceder a `http://localhost/proyecto`.
+
+## Si lo anterior no funciona (xampp)
+
+1. Verificar que la siguiente línea este descomentada de `httpd.conf` del servidor apache
+
+   ```bash
+   # Virtual hosts
+   LoadModule vhost_alias_module modules/mod_vhost_alias.so
+
+   ```
+
+2. Acceder a la carpeta de instalación de xamp e ir a la carpeta `apache/conf/extra/httpd-vhosts.conf` y agregar lo siguiente:
+
+   ```bash
+   <VirtualHost *:80>
+       DocumentRoot "C:\xampp\htdocs\nombre_del_proyecto\app"
+       ServerName nombre_del_proyecto.localhost
+       <Directory "C:\xampp\htdocs\nombre_del_proyecto\app">
+           DirectoryIndex index.php
+           Options Indexes FollowSymLinks
+           AllowOverride All
+           Require all granted
+        </Directory>
+   </VirtualHost>
+   ```
+
+3. Ya apache reconoce la url, pero para que el navegador tambien lo reconozca hay que acceder a la siguiente ruta `C:\Windows\System32\drivers\etc` y editar el archivo `hosts` agregando la siguiente linea:
+
+   ```bash
+   127.0.0.1 nombre_del_proyecto.localhost
+   ```
+
+4. Abrir el navegador web y acceder al proyecto utilizando la URL `http://nombre_del_proyecto.localhost`.
+
+## Más vistas previas
+
+![Vista previa 2](./app/assets/img/preview2.png)
+
+![Vista previa 3](./app/assets/img/preview3.png)
 
 ## Contribuciones
 

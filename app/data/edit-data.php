@@ -43,21 +43,21 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
             <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Dname") : "" ?>
           </div>
           <label for="name" class="w-full block mb-1 md:mb-2">Nuevo nombre</label>
-          <input type="text" id="name" name="name" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded" value="<?= $_SESSION["user"]["nombre"] ?>">
+          <input type="text" id="name" name="name" class=" px-2 py-1 inline w-full max-w-xs mb-2 md:mb-5 border-2 border-gray-600 rounded" value="<?= $_SESSION["user"]["nombre"] ?>">
         </div>
         <div class="w-full flex flex-col">
           <div class="w-64">
             <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Dsurnames") : "" ?>
           </div>
           <label for="surnames" class="w-full block mb-1 md:mb-2">Nuevos apellidos</label>
-          <input type="text" id="surnames" name="surnames" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded" value="<?= $_SESSION["user"]["apellidos"] ?>">
+          <input type="text" id="surnames" name="surnames" class=" px-2 py-1 inline w-full max-w-xs mb-2 md:mb-5 border-2 border-gray-600 rounded" value="<?= $_SESSION["user"]["apellidos"] ?>">
         </div>
         <div class="w-full flex flex-col">
           <div class="w-64">
             <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Demail") : "" ?>
           </div>
           <label for="email" class="w-full block mb-1 md:mb-2">Nuevo correo</label>
-          <input type="text" id="email" name="email" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded" value="<?= $_SESSION["user"]["email"] ?>">
+          <input type="text" id="email" name="email" class=" px-2 py-1 inline w-full max-w-xs mb-2 md:mb-5 border-2 border-gray-600 rounded" value="<?= $_SESSION["user"]["email"] ?>">
         </div>
         <input type="submit" value="Guardar" class="boton boton-azul">
       </form>

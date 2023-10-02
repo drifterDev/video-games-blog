@@ -43,12 +43,12 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
             <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Ptitle") : "" ?>
           </div>
           <label for="title" class="w-full block mb-1 md:mb-2">Título</label>
-          <input type="text" id="title" name="title" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded">
+          <input type="text" id="title" name="title" class=" px-2 py-1 inline w-full max-w-xl mb-2 md:mb-5 border-2 border-gray-600 rounded">
           <div class="w-64">
             <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Pdescription") : "" ?>
           </div>
           <label for="description" class="w-full block mb-1 md:mb-2">Descripción</label>
-          <textarea name="description" id="description" cols="20" rows="5" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded"></textarea>
+          <textarea name="description" id="description" cols="20" rows="5" class=" px-2 py-1 inline w-full max-w-xl mb-2 md:mb-5 border-2 border-gray-600 rounded"></textarea>
           <div class="w-64">
             <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "Pcategory") : "" ?>
           </div>

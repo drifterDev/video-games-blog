@@ -43,7 +43,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
         </div>
         <div class="flex w-full flex-col">
           <label for="name" class="w-full block mb-1 md:mb-2">Nombre</label>
-          <input type="text" id="name" name="name" class=" px-2 py-1 inline w-64 mb-2 md:mb-5 border-2 border-gray-600 rounded">
+          <input type="text" id="name" name="name" class=" px-2 py-1 inline w-full max-w-xs mb-2 md:mb-5 border-2 border-gray-600 rounded">
         </div>
         <div class="w-full flex">
           <input type="submit" value="Guardar" class="boton boton-azul">
