@@ -2,6 +2,8 @@ CREATE DATABASE nombre_de_la_base_de_datos;
 
 USE nombre_de_la_base_de_datos;
 
+SET NAMES 'utf8mb4';
+
 CREATE TABLE
     usuarios(
         id INT(255) NOT NULL AUTO_INCREMENT,
@@ -36,10 +38,13 @@ CREATE TABLE
         CONSTRAINT `fk_entradas_categorias` FOREIGN KEY (`categoria_id`) REFERENCES categorias (`id`) ON DELETE CASCADE ON UPDATE CASCADE
     ) ENGINE = InnoDB;
 
-SET NAMES 'utf8mb4';
 
 INSERT INTO categorias (nombre)
 VALUES ('Aventuras'), ('Estrategia'), ('Acción');
+
+INSERT INTO usuarios (nombre, apellidos, email, password, fecha_registro) VALUES
+('Nombre1', 'Apellidos1', 'email1@falso.com', 'password', '2023-09-17'),
+('Nombre2', 'Apellidos2', 'email2@falso.com', 'password', '2023-09-16');
 
 /* Ejecutar cuando se tenga dos o más usuarios registrados */
 
@@ -71,7 +76,7 @@ VALUES (
         '2023-09-15'
     ), (
         2,
-        4,
+        3,
         'En busca del tesoro perdido',
         'Únete a nuestra emocionante búsqueda en busca de un tesoro legendario en tierras desconocidas. Aventúrate en un viaje repleto de misterio y peligro mientras descubres pistas y resuelves acertijos en tu camino hacia la gloria. ¿Tendrás lo que se necesita para encontrar el tesoro perdido?',
         '2023-09-14'

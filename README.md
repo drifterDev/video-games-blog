@@ -18,7 +18,7 @@ _Motor de Búsqueda:_ Explora nuestro blog de manera eficiente utilizando nuestr
 
 ![Vista previa 1](./app/assets/img/preview.png)
 
-## Comenzando 🚀
+## Comenzando
 
 1. Clona este repositorio en tu máquina local o descargar la carpeta comprimida del proyecto:
 
@@ -26,7 +26,7 @@ _Motor de Búsqueda:_ Explora nuestro blog de manera eficiente utilizando nuestr
    git clone https://github.com/drifterDev/video-games-blog.git
    ```
 
-### Prerrequisitos 
+### Prerrequisitos
 
 Antes de comenzar, asegúrate de tener instalado `npm` en tu sistema. Si no lo tienes instalado, puedes descargarlo e instalarlo desde [el sitio web oficial de Node.js](https://nodejs.org/).
 
@@ -34,7 +34,7 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 **Recomendación:** Para facilitar la configuración de un servidor PHP y MySQL en tu entorno de desarrollo, recomiendo utilizar XAMPP, una solución todo en uno que incluye Apache (para PHP) y MySQL en un solo paquete. Puedes descargar XAMPP desde [el sitio web oficial de XAMPP](https://www.apachefriends.org/index.html). Esto simplificará la configuración y te permitirá comenzar rápidamente con tu proyecto.
 
-### Instalación 
+### Instalación
 
 1. Descargar las dependencias necesarias del proyecto:
 
@@ -65,7 +65,7 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 2. Coloca este proyecto en el directorio `htdocs` de XAMPP. Por defecto, el directorio `htdocs` se encuentra en la carpeta de instalación de XAMPP.
 
-3. Abre tu navegador web y accede al proyecto utilizando la URL `http://localhost/nombre_del_proyecto`. Reemplaza "nombre_de_tu_proyecto" con la carpeta o ruta relativa donde esté el proyecto dentro del directorio `htdocs`. Por ejemplo, si el proyecto está en `C:\xampp\htdocs\proyecto`, debes acceder a `http://localhost/proyecto`.
+3. Abre tu navegador web y accede al proyecto utilizando la URL `http://localhost/nombre_del_proyecto/app`. Reemplaza "nombre_de_tu_proyecto" con la carpeta o ruta relativa donde esté el proyecto dentro del directorio `htdocs`. Por ejemplo, si el proyecto está en `C:\xampp\htdocs\proyecto`, debes acceder a `http://localhost/proyecto/app`.
 
 ## Iniciar el proyecto (si lo anterior no funciona)
 
@@ -100,11 +100,11 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 4. Abrir el navegador web y acceder al proyecto utilizando la URL `http://nombre_del_proyecto.localhost`.
 
-## Construido con 
+## Construido con
 
-* [TailwindCSS](https://tailwindcss.com/) - El framework CSS utilizado
-* [MySQL](https://www.mysql.com/) - Gestor de base de datos
-* [PHP](https://www.php.net/) - Lenguaje de programación para el backend
+- [TailwindCSS](https://tailwindcss.com/) - El framework CSS utilizado
+- [MySQL](https://www.mysql.com/) - Gestor de base de datos
+- [PHP](https://www.php.net/) - Lenguaje de programación para el backend
 
 ## Más vistas previas
 
@@ -112,11 +112,11 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 ![Vista previa 3](./app/assets/img/preview3.png)
 
-## Contribuyendo 
+## Contribuyendo
 
 Aprecio cualquier sugerencia para mejorar el contenido de este proyecto. Si deseas contribuir, por favor crea un "issue" en el repositorio o contáctame directamente. Valoraré tus aportes para mejorar este repositorio.
 
-## Licencia 
+## Licencia
 
 Los códigos incluidos en este proyecto están bajo la Licencia MIT. Para obtener más información, consulta el archivo [LICENSE](LICENSE) en la raíz del repositorio.
 
