@@ -61,44 +61,25 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 ## Iniciar el proyecto
 
-1. Abre el panel de control de XAMPP y asegúrate de que los servicios de Apache y MySQL estén "Running" (ejecutándose). Si no lo están, haz clic en los botones "Start" junto a esos servicios para iniciarlos.
-
-2. Coloca este proyecto en el directorio `htdocs` de XAMPP. Por defecto, el directorio `htdocs` se encuentra en la carpeta de instalación de XAMPP.
-
-3. Abre tu navegador web y accede al proyecto utilizando la URL `http://localhost/nombre_del_proyecto/app`. Reemplaza "nombre_de_tu_proyecto" con la carpeta o ruta relativa donde esté el proyecto dentro del directorio `htdocs`. Por ejemplo, si el proyecto está en `C:\xampp\htdocs\proyecto`, debes acceder a `http://localhost/proyecto/app`.
-
-## Iniciar el proyecto (si lo anterior no funciona)
-
-1. Verificar que la siguiente línea este descomentada de `httpd.conf` del servidor apache
+1. Para iniciar el proyecto dirigete a la carpeta `app` y ejecuta el siguiente comando:
 
    ```bash
-   # Virtual hosts
-   LoadModule vhost_alias_module modules/mod_vhost_alias.so
-
+   php -S localhost:8000
    ```
 
-2. Acceder a la carpeta de instalación de xamp e ir a la carpeta `apache/conf/extra/httpd-vhosts.conf` y agregar lo siguiente:
+2. Abre tu navegador web y dirígete a la siguiente dirección:
 
    ```bash
-   <VirtualHost *:80>
-       DocumentRoot "C:\xampp\htdocs\nombre_del_proyecto\app"
-       ServerName nombre_del_proyecto.localhost
-       <Directory "C:\xampp\htdocs\nombre_del_proyecto\app">
-           DirectoryIndex index.php
-           Options Indexes FollowSymLinks
-           AllowOverride All
-           Require all granted
-        </Directory>
-   </VirtualHost>
+   http://localhost:8000
    ```
 
-3. Ya apache reconoce la url, pero para que el navegador tambien lo reconozca hay que acceder a la siguiente ruta `C:\Windows\System32\drivers\etc` y editar el archivo `hosts` agregando la siguiente linea:
+3. Tambien puedes iniciar el proyecto utilizando XAMPP. Para ello, copia la carpeta `app` en la carpeta `htdocs` de tu instalación de XAMPP. Luego, inicia los servicios de Apache y MySQL en XAMPP y abre tu navegador web en la siguiente dirección:
 
    ```bash
-   127.0.0.1 nombre_del_proyecto.localhost
+   http://localhost/app
    ```
 
-4. Abrir el navegador web y acceder al proyecto utilizando la URL `http://nombre_del_proyecto.localhost`.
+4. Otra posible opción es utilizar la extensión de VSCode [PHP server](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver) para iniciar el proyecto. Para ello, abre la carpeta `app` en VSCode y presiona `F1` para abrir el menú de comandos. Luego, escribe `PHP Server: Serve Project` y presiona `Enter` para iniciar el proyecto.
 
 ## Construido con
 
