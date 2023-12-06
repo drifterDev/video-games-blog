@@ -25,7 +25,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <?php require_once("../includes/header.php") ?>
   <div id="container" class="flex flex-wrap">
     <!-- Caja principal -->
-    <main id="main" class="w-full m-5 lg:my-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
+    <main id="main" class="w-full m-5 lg:my-8 lg:ml-8 lg:w-[66%] lg:min-h-[500px] md:w-[62%] p-5 md:p-8 bg-white">
       <h1 class="text-2xl md:text-3xl font-bold mb-4">Ultimas entradas</h1>
       <?php
       $posts = getPosts($db, false);

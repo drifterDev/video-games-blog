@@ -31,12 +31,6 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
       <?php
         endwhile;
       endif; ?>
-      <li>
-        <a href="index.php">Sobre mí</a>
-      </li>
-      <li>
-        <a href="index.php">Contacto</a>
-      </li>
     </ul>
   </nav>
 </header>

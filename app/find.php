@@ -25,7 +25,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
   <?php require_once("includes/header-index.php") ?>
   <div id="container" class="flex flex-wrap">
     <!-- Caja principal -->
-    <main id="main" class="w-full m-5 lg:my-8 lg:ml-8 lg:w-[66%] md:w-[62%] p-5 md:p-8 bg-white">
+    <main id="main" class="w-full m-5 lg:my-8 lg:ml-8 lg:w-[66%] lg:min-h-[500px] md:w-[62%] p-5 md:p-8 bg-white">
       <?php
       if (!isset($_POST["value"])) {
         header("Location: index.php");
@@ -55,7 +55,7 @@ Para más información, consulta el archivo LICENSE en la raíz del repositorio.
         <?= isset($_SESSION["errors"]) ? show_errors($_SESSION["errors"], "getPost") : "" ?>
       </div>
     </main>
-    <?php require_once("includes/right-bar.php") ?>
+    <?php require_once("includes/right-bar-index.php") ?>
   </div>
   <?php require_once("includes/footer.php") ?>
 </body>
