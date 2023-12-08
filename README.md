@@ -61,7 +61,7 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
 
 ## Iniciar el proyecto
 
-1. Para iniciar el proyecto dirigete a la carpeta `app` y ejecuta el siguiente comando:
+1. Para iniciar el proyecto dirígete a la carpeta `app` y ejecuta el siguiente comando:
 
    ```bash
    php -S localhost:8000
@@ -73,10 +73,10 @@ Además, ten en cuenta que para ejecutar este proyecto de manera completa, neces
    http://localhost:8000
    ```
 
-3. Tambien puedes iniciar el proyecto utilizando XAMPP. Para ello, copia la carpeta `app` en la carpeta `htdocs` de tu instalación de XAMPP. Luego, inicia los servicios de Apache y MySQL en XAMPP y abre tu navegador web en la siguiente dirección:
+3. También puedes iniciar el proyecto utilizando XAMPP. Para ello, copia la carpeta del proyecto en la carpeta `htdocs` de XAMPP y luego inicia el servidor Apache y MySQL desde el panel de control de XAMPP. Luego, abre tu navegador web y dirígete a la siguiente dirección (si estás en Linux con httpd, la carpeta `htdocs` sería `var/www/html`):
 
    ```bash
-   http://localhost/app
+   http://localhost/nombre_de_la_carpeta_del_proyecto/app
    ```
 
 4. Otra posible opción es utilizar la extensión de VSCode [PHP server](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver) para iniciar el proyecto. Para ello, abre la carpeta `app` en VSCode y presiona `F1` para abrir el menú de comandos. Luego, escribe `PHP Server: Serve Project` y presiona `Enter` para iniciar el proyecto.
